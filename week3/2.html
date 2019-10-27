@@ -1,8 +1,10 @@
+  
 <html>
 <head>
-<style>
 
+<style>
 .letters div{
+display: inline;
   border: 1px solid red;
   border-radius: 100px;
   background-color: #B63C3C;
@@ -14,8 +16,16 @@
   margin: 1px;
   float: left;
 }
-
+@media(max-width:600px){
+  div{
+    display:inline-block;
+  }
+  
+}
 </style>
+
+
+
 </head>
 <body>
 <div class="letters">
