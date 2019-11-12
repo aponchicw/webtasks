@@ -1,0 +1,126 @@
+<html>
+<h2>Calculate the determinant of the given matrix: </h2>
+  <head>
+    <link rel="stylesheet" href="style1.css">
+    <script src="script1.js" defer></script>
+  </head>
+
+  <body background="https://image.freepik.com/free-photo/smooth-elegant-gradient-purple-background-well-using-as-design_1258-1798.jpg">
+    <div id="matrix">
+      <input type="text" id="s11"/>
+      <input type="text" id="s12"/>
+      <input type="text" id="s13"/></br>
+      <input type="text" id="s21"/>
+      <input type="text" id="s22"/>
+      <input type="text" id="s23"/></br>
+      <input type="text" id="s31"/>
+      <input type="text" id="s32"/>
+      <input type="text" id="s33"/>
+    </div>
+    <button id="determinant" onclick="calc()">Find determinant -></button>
+<div id="word"> RESULT: </div>
+<div id="result">0</div></br>
+<div id="definition"><span>|A| = a*(e*i - f*h) - b*(d*i - f*g) + c*(d*h - e*g)</span></br></br></br><strong>Definition:</strong></br></br><b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+<script>
+ 
+function calc(){  
+  var a = parseInt(document.getElementById('s11').value);
+    var b = parseInt(document.getElementById('s12').value);
+    var c = parseInt(document.getElementById('s13').value);
+    var d = parseInt(document.getElementById('s21').value);
+    var e = parseInt(document.getElementById('s22').value);
+    var f = parseInt(document.getElementById('s23').value);
+    var g = parseInt(document.getElementById('s31').value);
+    var h = parseInt(document.getElementById('s32').value);
+    var i = parseInt(document.getElementById('s33').value);
+    var res = a*(e*i - f*h) - b*(d*i - f*g)+c*(d*h - e*g);
+    document.getElementById("result").innerHTML=res;
+}
+</script>
+<style>
+
+  span{
+font-family: 'Karla', sans-serif;
+font-size:20px;
+    background: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+  }
+  #definition{
+    padding: 10px;
+    font-family: 'Arial';
+    position: fixed;
+    right:20px;
+    
+    width:70%;
+    color: #555555;
+    
+    }
+  #word{
+    font-family: 'Karla', sans-serif;
+    font-size:24px;
+    padding:5px;
+    display:flex;
+    justify-content: center;
+    background-color: #555555;
+    color: white;
+  }
+  #result
+  {
+    font-family: 'Karla', sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color: #555555;
+    color: red;
+    font-size:18px;
+    padding:5px;
+    margin-top: 5px;
+    
+  }
+  h2{
+  margin-top: 15px;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight:normal;
+  font-size: 38px;
+}
+input{
+  padding: 10px;
+  width:74px;
+  height:74px;
+  margin: 3px;
+}
+#matrix{
+ position: absolute;
+ top:30%;
+ background:#555555;
+ border-radius:5px;
+ box-shadow: 10px 10px 40px purple;
+ width: 250px;
+ height: 250px;
+ padding:10px;
+}
+#determinant{
+  position: absolute;
+  top:80%;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  padding: 10px;
+  width:270px;
+  margin-top:20px;
+  text-align:left;
+}
+
+#determinant:hover{
+  background-color: #555555;
+  color: white;
+}
+  
+</style>
+
+  </body>
+
+</html>

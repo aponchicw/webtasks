@@ -1,0 +1,180 @@
+<html><body>
+<header>
+      <a href="">Contacts</a>
+      <a href="">Repair and Services</a>
+      <a href="">Other Models</a>
+      <a href="">FAQ</a>
+    </header>
+<div id="definition">
+  <h1 id="name">Toyota Corolla</h1>
+  <p id="paragraph">For its time, the Mk V Corolla was an absolute monster of a car. It was made famous by Initial-D, a series depicting the rich and vibrant history of Japanese downhill racing. The 86 was able to overcome even Nissan GT-R skylines by virtue of its immensely light body and exemplary cornering capabilities.The 1.8-liter 136 hp inline-four 4A-GE capped out at 7600 RPM, allowing drivers to enter and exit corners at very high rev rates without losing top-end power, thanks to VTEC predecessor variable valve timing.</p>
+</div>
+<div id="image">
+  <img id="imgToSwitch" src="http://letsdrivecar.com/wp-content/uploads/2016/07/Lexus-LFA.jpg" width="500" height="400">
+</div>   
+
+<div id="buttons">
+  <!--<button id="back" onclick="switchImgBack()">BACK</button> -->
+  <button id="img1"></button>
+  <button id="img2" onclick="img2()"></button>
+  <button id="img3"></button>
+  <button id="img4"></button>
+  <button id="img5"></button>
+  <button id="next" onclick="switchImg()"></button>
+</div>
+<style>
+header{
+  display: flex;
+  justify-content:center;
+}
+header a{
+  background-color:#555555;
+  color:white;
+  padding:10px;
+  border-left:1px solid grey;
+  border-right:1px solid grey;
+  width:100%;
+  text-align:center;
+
+}
+a:hover {
+  background-color: darkred;
+  color: white;
+}
+#definition{
+  padding-top:5%;
+  margin-left: 5%;
+}
+#definition p{
+  font-family: 'Karla', sans-serif;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  text-align: justify;
+  text-justify: inter-word;
+  color: white;
+}
+#definition h1{
+  font-family: 'Karla', sans-serif;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: 5px 5px 5px #687ea1;
+}
+#image{
+  position:absolute;
+  right:0;
+  top:10%;
+  margin-right:5%;
+  box-shadow: 10px 10px 30px lightgrey;
+}
+#img1{
+  background: url("http://www.letsdrivecar.com/wp-content/uploads/2016/07/Lexus-LFA.jpg");
+  background-size:100%;
+  height: 60px;
+  width: 100px;
+  border: 2px solid #727d75;
+}
+#img2{
+  background: url("https://car-images.bauersecure.com/pagefiles/87395/hybrid_opinion_01.jpg");
+  background-size:100%;
+  height: 60px;
+  width: 100px;
+  border: 2px solid #727d75;
+}
+#img3{
+  background: url("https://stmed.net/sites/default/files/porsche-918-spyder-wallpapers-32504-9703143.jpg");
+  background-size:100%;
+  height: 60px;
+  width: 100px;
+  border: 2px solid #727d75;
+}
+#img4{
+  background: url("https://www.tflcar.com/wp-content/uploads/2017/06/47216_2017_Veloster_Turbo.jpg");
+  background-size:100%;
+  height: 60px;
+  width: 100px;
+  border: 2px solid #727d75;
+}
+#img5{
+  background: url("http://www.wheels-alive.co.uk/wp-content/uploads/2018/02/Kia-Stinger-GT-S-front-side-action-2.jpg");
+  background-size:100%;
+  height: 60px;
+  width: 100px;
+  border: 2px solid #727d75;
+}
+#next{
+  border: 2px solid #727d75;
+  border-radius:97px;
+  width:60px;
+height:60px;
+  background: url("http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/arrow-next-3-icon.png");
+  background-size: 100%;
+}
+#buttons{
+  display:flex;
+  justify-content: space-around;
+  position:absolute;
+  bottom:5%;
+  width:95%;
+  background-color: #555555;
+  color: black;
+  border: 2px solid #727d75;
+  padding: 10px;
+}
+body{
+  background-image: url("https://s3.envato.com/files/117924447/Preview%20Image.jpg");
+  background-size:100%;
+}
+</style>
+
+<script>
+var x = 1; 
+function switchImg() {
+  if (x == 1) {
+    document.getElementById("imgToSwitch").src = "http://letsdrivecar.com/wp-content/uploads/2016/07/Lexus-LFA.jpg";
+    var paragraph = "For its time, the Mk V Corolla was an absolute monster of a car. It was made famous by Initial-D, a series depicting the rich and vibrant history of Japanese downhill racing. The 86 was able to overcome even Nissan GT-R skylines by virtue of its immensely light body and exemplary cornering capabilities.The 1.8-liter 136 hp inline-four 4A-GE capped out at 7600 RPM, allowing drivers to enter and exit corners at very high rev rates without losing top-end power, thanks to VTEC predecessor variable valve timing.";
+    document.getElementById("paragraph").innerHTML=paragraph;
+    var name="Toyota Corolla";
+    document.getElementById("name").innerHTML=name;
+    x++; 
+  } 
+  else if (x == 2) { 
+    document.getElementById("imgToSwitch").src = "https://car-images.bauersecure.com/pagefiles/87395/hybrid_opinion_01.jpg";
+    x++; 
+    var paragraph = "The fastest production car in the currentBMW lineup is the M5 Competition, which can accelerate from 0-60 mph in an eye-popping 3.1 seconds. The BMW luxury brand offers an impressive array of performance-inspired options, whether you prefer a sporty coupe or a sophisticated SUV. Learn more about BMW 0-60 times to find out how fast you can take your brand-new BMW when you hit the Pekin streets.";
+    document.getElementById("paragraph").innerHTML=paragraph;
+    var name="BMW X Series";
+    document.getElementById("name").innerHTML=name;
+  } 
+  else if (x == 3) { 
+    document.getElementById("imgToSwitch").src = "https://stmed.net/sites/default/files/porsche-918-spyder-wallpapers-32504-9703143.jpg";
+    var paragraph = "Believe it or not, one of the fastest Porsche vehicles is a hybrid. The 2019 919 Evo runs on a 2.0L V4 turbo hybrid engine that puts out 900 ps. With a seven-speed transmission and a middle engine, this all-wheel-drive Porsche can hit 0-60 mph in just 2.2 seconds and 0-120 mph in 4.8 seconds.With a ? mile time of 8.3 seconds at 185.8 mph, the Porsche 919 Evo has completed the Bahrain International Circuit at 1:39.67 and the Circuit Paul Ricard at 1:37.22.Even more impressively, the Porsche 919 Evo recently set a record lap time at the Spa-Francorchamps with a 1:41.770 finish time. This beat an F1 car by completing the 4.35-mile circuit at an average speed of 152 mph and a top speed of 230 mph.";
+    document.getElementById("paragraph").innerHTML=paragraph;
+    var name="Porsche 919 Evo Hybrid Specs";
+    document.getElementById("name").innerHTML=name;
+    x++; 
+  } 
+  else if (x == 4) {
+    document.getElementById("imgToSwitch").src = "https://www.tflcar.com/wp-content/uploads/2017/06/47216_2017_Veloster_Turbo.jpg";
+    var paragraph = "You really have to hand it to Hyundai. After spending the better part of the past three decades painstakingly building its brand on an international scale, it’s now arguably one of the greatest automotive success stories in history. Korean cars have come a long way, having gone from being viewed as disposable commuter cars to award-winning sponsors of the NFL in the past 10 years alone.While its sister company, Kia, offers a more rambunctious approach to automaking and marketing, Hyundai has formed a niche for itself with strong sedans, feisty hatchbacks, and component crossovers. Of late, it’s even begun targeting European luxury brands; first with the Equus and Genesis luxury sedans, then by spinning the Genesis off into its own brand. ";
+    document.getElementById("paragraph").innerHTML=paragraph;
+    var name="Hyundai Veloster Turbo";
+    document.getElementById("name").innerHTML=name;
+    x++; 
+  } 
+  
+  else if (x == 5) { 
+    document.getElementById("imgToSwitch").src = "http://www.wheels-alive.co.uk/wp-content/uploads/2018/02/Kia-Stinger-GT-S-front-side-action-2.jpg";
+    var paragraph = "The fifth fastest Kia produced by the car brand is the 2018 Kia Forte5. This car accelerates from 0 to 60 mph in 6.6 seconds with a top speed of 140 mph. The 2018 model is a member of the second generation that features upgrades in the engine, from a 1.6 liter turbo 204 in older models that achieved a 0 to 60 rating in 6.9 seconds to a new 2.0 liter inline four, accompanied by a six speed manual that generates 147 horsepower and a .3 second faster acceleration time in ratings. This variant is also available with an automatic transmission. A hatchback version of the Forte5 features your choice of a 2.0 liter 164 horsepower in a six speed automatic or a 1.6 liter 201 horsepower turbo with a seven speed automatic or six speed manual.";
+    document.getElementById("paragraph").innerHTML=paragraph;
+    var name="Kia Forte5";
+    document.getElementById("name").innerHTML=name;
+    x = 1; 
+  }
+}
+</script>
+
+</body></html>
