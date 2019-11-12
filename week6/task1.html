@@ -1,291 +1,75 @@
 <html>
   <head>
+    <script src="script.js" defer></script>
   </head>
-  <header>
-      <div class="left-part">
-      <a id="icon" href=""><img src="https://icon-library.net/images/logo-icon/logo-icon-24.jpg" width="100" height="40"/>
-        </div>
-        <div class="right-part">
-        <input id="inp"></input>
-        <img id="profile_photo"src="https://sun9-55.userapi.com/c849236/v849236848/19f3f4/-3P-S3PIJOs.jpg" width="50"/></div>
-        </header>
-  <body>
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Are you sure, want to delete?</p>
-  </div>
-</div>
-      <div class="links">
-        <a href="">Users</a>
-        <a href="">Reports</a>
-        <a href="">Requests</a>
-        <a href="">Disabled users</a>
-        <a href=""><img src="https://sun9-10.userapi.com/c854220/v854220686/13437c/qj5LMArMVg8.jpg" width="40" height="15"</a></div>
-<div class="add">
-  <p>Dashboard Users</p>
-  <button onclick="check()" id="btn">(+) Add User</button>
-</div>
-       
-<div class="well">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Account Status</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
-          <th style="width: 36px;">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><input onclick="check()" id="myCheck1" type="checkbox" /><p id="ch1">Inactive</p></td>
-          <td>Arujan</td>
-          <td>Zhankushukova</td>
-          <td>aru_jan</td>
-          <td>
-            <button id="ed">edit</button>
-            <button id="myBtn">delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td><input onclick="check2()" id="myCheck2" type="checkbox" /><p id="ch2">Inactive</p></td>
-          <td>Maira</td>
-          <td>Moldimanova</td>
-          <td>moiraaa</td>
-          <td>
-            <button id="ed">edit</button>
-            <button id="myBtn">delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td><input onclick="check3()" id="myCheck3" type="checkbox" /><p id="ch3">Inactive</p></td>
-          <td>Ayajan</td>
-          <td>Askarova</td>
-          <td>ayajohnny</td>
-          <td>
-            <button id="ed">edit</button>
-            <button id="myBtn">delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td><input onclick="check4()" id="myCheck4" type="checkbox" /><p id="ch4">Inactive</p></td>
-          <td>Tamara</td>
-          <td>Turzhanova</td>
-          <td>only_toma</td>
-          <td>
-            <button id="ed">edit</button>
-            <button id="myBtn">delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td><input onclick="check5()" id="myCheck5" type="checkbox" /><p id="ch5">Inactive</p></td>
-          <td>Naruto</td>
-          <td>Uzumaki</td>
-          <td>konohagakure</td>
-          <td>
-            <button id="ed">edit</button>
-            <button id="myBtn">delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  <p>Users: </p>
-  <div id="count">5</div>
-        </div>
-        
-<style>
-a{
-  text-decoration:none;
-}
-body{
-  font-family: Arial;
-}
-#profile_photo{
-  border: 1px solid grey;
-  border-radius:50px;
-}
-.links{
-  display: flex;
-  justify-content:start;
-  align-items:center;
-  background-color:white;
-  border: 0.2px solid grey;
-}
-.links a{
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 10px;
-  color:black;
-  text-decoration: none;
-  text-align:center;
-}
-.links a:hover {
-  border-bottom: 2px solid #7300e6;
-  color: black;
-}
-header{
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
-  border:0.2px solid grey;
-  padding:10px;
-}
-.add{
-  display:flex;
-  justify-content:space-between;
-  align-items: center;
-  border-left: 5px solid #7300e6;
-  margin-top:10px;
-}
-.add p{
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-  color:black;
-  padding-left:20px;
-}
-#btn{
-  font-family: Arial;
-  background-color: #7300e6;
-  color: white;
-  padding: 15px 30px;
-  text-align: center;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border: none;
-}
-#btn:hover{
-  background-color: white;
-  color: #7300e6;
-  border: 1px solid #7300e6;
-}
-.user.html{
-  background-image: url("https://image.flaticon.com/icons/svg/61/61456.svg"); 
-}
-td{
-  padding:5px 50px 5px 50px;
-  border: none;
-}
-thead{
-  background:  #f5f5f5;
-  margin:10px;
-}
-tr:hover {
-  background-color: #f5f5f5;
-  box-shadow: 0px 0px 3px #800080;
-}
-th, td {
-  border-bottom: 1px solid #ddd;
-}
-table{
-  width:100%;
-  padding-top:15%;
-  border-collapse: collapse;
-}
-
-.modal {
-  display: none;
-  position: fixed; 
-  z-index: 1; 
-  padding-top: 100px; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%;
-  overflow: auto; 
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4); 
-}
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-</style>
 <script>
-
-function check() {
-  var x = document.getElementById("myCheck1").checked;
+var x = document.getElementById('first').onclick;
+function scream() {
   if(x){
-    document.getElementById("ch1").innerHTML = "Active";
-  }
+      document.getElementById('F').innerHTML="<strike>Finish web tasks</strike>";
+    x=!x;
+     }
   else if(!x){
-    document.getElementById("ch1").innerHTML = "Inctive";
-  }
+    document.getElementById('F').innerHTML="Finish web tasks";
+    x=!x;
+  }  
 }
-function check2(){
-  var y = document.getElementById("myCheck2").checked; 
+var y = document.getElementById('second').onclick;
+function scream2() {
   if(y){
-    document.getElementById("ch2").innerHTML = "Active";
-  }
+      document.getElementById('S').innerHTML="<strike>Go to gym</strike>";
+    y=!y;
+     }
   else if(!y){
-    document.getElementById("ch2").innerHTML = "Inactive";
-  }
+    document.getElementById('S').innerHTML="Go to gym";
+    y=!y;
+  }  
 }
-function check3(){
-  var z = document.getElementById("myCheck3").checked; 
+var z = document.getElementById('third').onclick;
+var a = document.getElementById('fourth').onclick;
+var b = document.getElementById('fifth').onclick;
+function scream3() {
   if(z){
-    document.getElementById("ch3").innerHTML = "Active";
-  }
+      document.getElementById('T').innerHTML="<strike>Clean home</strike>";
+    z=!z;
+     }
   else if(!z){
-    document.getElementById("ch3").innerHTML = "Inactive";
-  }
+    document.getElementById('T').innerHTML="Clean home";
+    z=!z;
+  }  
 }
-function check4(){
-  var a = document.getElementById("myCheck4").checked; 
+function scream4() {
   if(a){
-    document.getElementById("ch4").innerHTML = "Active";
-  }
+      document.getElementById('FO').innerHTML="<strike>Start project</strike>";
+    a=!a;
+     }
   else if(!a){
-    document.getElementById("ch4").innerHTML = "Inactive";
-  }
+    document.getElementById('FO').innerHTML="Start project";
+    a=!a;
+  }  
 }
-function check5(){
-  var b = document.getElementById("myCheck5").checked; 
+function scream5() {
   if(b){
-    document.getElementById("ch5").innerHTML = "Active";
-  }
+      document.getElementById('FI').innerHTML="<strike>Prepare to calculus</strike>";
+    b=!b;
+     }
   else if(!b){
-    document.getElementById("ch5").innerHTML = "Inactive";
-  }
+    document.getElementById('FI').innerHTML="Prepare to calculus";
+    b=!b;
+  }  
 }
 
-var modal = document.getElementById("myModal");
 
-var btn = document.getElementById("myBtn");
-
-var span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-span.onclick = function() {
-  modal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 </script>
-        
+
+  <body>
+    <div id="tasks">
+      <div><button id="first" onclick="scream()">Finish</button><span id="F">Finish web tasks</span></div>
+      <div><button id="second" onclick="scream2()">Finish</button><span id="S">Go to gym</span></div>
+      <div><button id="third" onclick="scream3()">Finish</button><span id="T">Clean home</span></div>
+      <div><button id="fourth" onclick="scream4()">Finish</button><span id="FO">Start project</span></div>
+      <div><button id="fifth" onclick="scream5()">Finish</button><span id="FI">Prepare to calculus</span></div>
+    </div>
   </body>
-  
+
 </html>

@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <script src="script3.js" defer></script>
+  </head>
+  <body>
+    <div id="insideBasket">
+      <span id="items">0</span> items, total: <span id="sum">0</span>$</div>
+    <div id="cars">
+      <img class="card" src="1.jpg"/>
+      <button id="btn" onclick="scream()"></button>
+      <img class="card" src="2.jpg"/>
+      <button id="btn" onclick="scream1()"></button>
+      <img class="card" src="3.jpg"/>
+      <button id="btn" onclick="scream2()"></button>
+    </div>
+    
+  </body>
+<style>
+#btn{
+  width:50px;
+  height: 50px;
+  background: url(https://cdn4.vectorstock.com/i/1000x1000/84/18/shopping-basket-round-icon-vector-16688418.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+#cars{
+		  display:flex;
+		  flex-wrap:wrap;
+}
+.card{
+		  position:relative;
+		  width:150px;
+		  margin:5px;
+}
+.card btn{
+		  position:absolute;
+		  right:5px;
+		  top:5px;
+		  z-index:9;
+      width:30px;
+}
+#insideBasket{
+		  border:1px solid red;
+		  text-align:center;
+}
+</style>
+<script>
+var x = document.getElementById('btn').onclick;
+var itm = 0; 
+var price = 0;
+function scream() {
+  if(x){
+    price=price+10000;
+    itm= itm+1;
+      document.getElementById('sum').innerHTML=price;
+    document.getElementById('items').innerHTML=itm;
+    x=!x;
+     }
+  else if(!x){
+    itm= itm-1;
+    price = price -10000;
+    document.getElementById('sum').innerHTML=price;
+    document.getElementById('items').innerHTML=itm;
+    x=!x;
+  }  
+}
+
+
+var y = document.getElementById('btn').onclick;
+function scream1() {
+  if(y){
+    price=price+25000;
+    itm= itm+1;
+      document.getElementById('sum').innerHTML=price;
+    document.getElementById('items').innerHTML=itm;
+    y=!y;
+     }
+  else if(!y){
+    price = price -25000;
+    itm= itm-1;
+    document.getElementById('sum').innerHTML=price;
+    document.getElementById('items').innerHTML=itm;
+    y=!y;
+  }  
+}
+
+
+var z = document.getElementById('btn').onclick;
+function scream2() {
+  if(z){
+    price=price+20000;
+    itm= itm+1;
+      document.getElementById('sum').innerHTML=price;
+    document.getElementById('items').innerHTML=itm;
+    z=!z;
+     }
+  else if(!z){
+    price = price -20000;
+    itm= itm-1;
+    document.getElementById('sum').innerHTML=price;
+    document.getElementById('items').innerHTML=itm;
+    z=!z;
+  }  
+}
+</script>
+
+</html>
