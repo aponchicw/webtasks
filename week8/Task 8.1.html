@@ -1,0 +1,67 @@
+<html>
+<head>
+<style>
+#news{
+	border:1px solid red;
+	width:400px;
+	height:300px;
+}
+
+</style>
+</head>
+<body>
+
+<div id="news"></div>
+<button id="sport">Load Sport news</button>
+<button id="politics">Load Politics news</button>
+<button id="bussiness">Load Bussiness news</button>
+
+
+<script>
+		 
+    	let myRequest = new Request("Task 1.json");
+    	fetch("Task 1.json") 
+      	.then(function(resp) {
+        	return resp.json();
+	     })
+	      .then(function(data){
+	      	document.getElementById('sport').addEventListener('click',function () {
+	      	let r = document.getElementById('news');
+	      	document.getElementById('news').innerHTML="";
+	      	r.innerHTML+="<h2>Sport<h2>";
+	      	r.innerHTML+=data["sport"];
+	      });
+
+	      	document.getElementById('politics').addEventListener('click',function () {
+	      	let r = document.getElementById('news');
+	      	document.getElementById('news').innerHTML="";
+	      	r.innerHTML+="<h2>Politics<h2>";
+	      	r.innerHTML+=data["politics"];
+	      });
+
+
+	      	document.getElementById('bussiness').addEventListener('click',function () {
+	      	let r = document.getElementById('news');
+	      	document.getElementById('news').innerHTML="";
+	      	r.innerHTML+="<h2>Bussiness<h2>";
+	      	r.innerHTML+=data["bussiness"];
+	      });
+
+		});
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

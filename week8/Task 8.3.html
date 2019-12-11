@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+      #cards .card{
+        border:1px solid red;
+        display:flex;
+        width:300px;
+      }
+      #cards .card .title{
+        flex-grow: 1;
+      }
+      #cards .card .price{
+        font-weight: bold;
+        padding-right: 20px;
+      }
+      #loading{
+        display: none;
+      }
+      #cards{
+        width:300px;
+        height:200px;
+        border: 1px solid blue;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <button id="loader">Load</button>
+    <div>
+      <button id="sortByMaker">Sort by maker</button>
+      <button id="sortByPrice">Sort by price</button>
+    </div>
+    <div id="cards">
+      <img width="300px" height="200px" id="loading" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+    </div>
+
+
+    <script defer>
+    "use strict";
+
+    let a = new Array();
+    let a2 = new Array();
+    document.getElementById('loader').addEventListener('click',up);
+
+    function up(){
+      if( document.getElementById('loader').innerHTML=="load file"){
+        System.exit(0);
+      }
+      document.getElementById('loading').style.display='block';
+    var myInit = {method:'GET',headers:{'Content-Type':'application/json'},mode:'cors',cache:'default'
+
+    };
+
+    let myRequest = new Request("Task 3.json");
+    fetch(myRequest)
+      .then(function(resp) {
+        return resp.json();
+     })
+      .then(function(data){
+        //console.log(data);
+         document.getElementById('loading').style.display='none';
+         document.getElementById('loader').innerHTML="load file";
+
+         for(var r=0;r<3;r++){
+           console.log(data[r].model);
+
+           var d =document.createElement('div');
+            d.setAttribute("class","card");
+            a=data;
+            a2=data;
+            d.innerHTML="<p class='title'>"+data[r].model+"</p>"+"<p class='price'>"+data[r].price + "</p>";
+           document.getElementById('cards').appendChild(d);
+         };
+      })
+
+
+
+       document.getElementById('sortByPrice').addEventListener('click',pr);
+
+        function pr(){
+
+          document.getElementById('cards').innerHTML="";
+          a = a.sort(function(a,b){
+              return a.price - b.price;
+              }
+          );
+          for (var i = a.length-1; i>=0; i--) {
+              var d =document.createElement('div');
+              d.setAttribute("class","card");
+              d.innerHTML="<p class='title'>"+a[i].model+"</p>"+"<p class='price'>"+a[i].price + "</p>";
+             document.getElementById('cards').appendChild(d);
+
+          }
+        }
+
+        function compare(a, b) {
+          // Use toUpperCase() to ignore character casing
+          const bandA = a.model.toUpperCase();
+          const bandB = b.model.toUpperCase();
+          console.log(bandA);
+          let comparison = 0;
+          if (bandA > bandB) {
+            comparison = -1;
+          } else if (bandA < bandB) {
+            comparison = 1;
+          }
+          return comparison;
+        }
+
+        document.getElementById('sortByMaker').addEventListener('click',mr);
+        function mr(){
+              document.getElementById('cards').innerHTML="";
+              a2 = a2.sort(compare);
+              document.getElementById('cards').innerHTML="";
+              for (var i = a2.length-1; i>=0; i--) {
+              var d =document.createElement('div');
+              d.setAttribute("class","card");
+              d.innerHTML="<p class='title'>"+a2[i].model+"</p>"+"<p class='price'>"+a2[i].price + "</p>";
+             document.getElementById('cards').appendChild(d);
+
+          }
+        }
+
+}
+    </script>
+  </body>
+
+</html>
