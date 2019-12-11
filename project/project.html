@@ -1,51 +1,152 @@
-<html>
-  <head>
-    <style>
-    body{
-      background-color: #00C0A3;
-      padding:0;
-      margin: 0;
-    }
-    header{
-      display:flex;
-      justify-content:space-between;
-    }
-    header a{
-      background-color:#4B4453;
-      color:white;
-      text-decoration: none;
-      padding:1% 1% 1% 1%;
-      width:100%;
-      text-align:center;
-      font-family: Arial;
-    }
-    a:hover{
-      background-image: linear-gradient(to bottom, #00896f, #007982, #216681, #44536e, #4b4453);
-      color: white;
-    }
-    footer{
-      width: 100%;
-      position: fixed;
-      background: #4B4453;
-      padding: 10px 0px;
-      color: #fff;
-      text-align: center;
-    }
-    </style>
-  </head>
-  <body>
-    <header>
-        <a href="news">News</a>
-        <a href="FAQs">FAQs</a>
-        <a href="support">Support</a>
-        <a href="shop">Online-Shop</a>
-        <a href="cart"><img src="https://flaticons.net/gd/makefg.php?i=icons/Shopping/Shopping-Cart-01.png&r=255&g=255&b=255" width="20"/></a>
-    </header>
-    <section>
-      <div id="logo">
-        <img src="https://document-export.canva.com/DADs-lcFsRc/13/thumbnail/0001-4259148432.png" width="200" height="150"/>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Flexbox Grid</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navigation">
+      <div class="logotype">ECO-qozgalys</div>
+      <ul class="categories">
+        <li class="category-item"><a href="#">FAQs</a></li>
+        <li class="category-item"><a href="#">Support</a></li>
+        <li class="category-item"><a href="#">Shop</a></li>
+        <li class="category-item"><a href="#">Addresses</a></li>
+      </ul>
+    </nav>
+    <div class="search">
+      <input type="search" placeholder="Type to search..."/>
+    </div>
+  </header>
+  <div class="wrapper">
+    <aside class="sidebar">
+      <ul class="sidebar-list">
+        <li class="sidebar-item">
+          <i class="fa fa-newspaper-o"></i>         </li>
+        <li class="sidebar-item sb-active">             <i class="fa fa-th"></i>
+        </li>
+        <li class="sidebar-item">
+          <i class="fa fa-picture-o"></i>           </li>
+        <li class="sidebar-item">
+          <i class="fa fa-bell-o"></i>
+        </li>
+        <li class="sidebar-item">
+          <i class="fa fa-bolt"></i>
+        </li>
+      </ul>
+    </aside>
+    <main class="content">
+      <div class="feed-grid">
+        <div class="card-half wide">
+          <div class="card-img">
+            <span class="label">
+              <i class="fa fa-star"></i>                 </span>
+            <img src="https://sun9-3.userapi.com/c855216/v855216513/199572/EttTLSp7J7E.jpg" alt="img"/>
+          </div>
+          <div class="card-text">
+            <h4>All outdoor & adventure lovers should follow this guy on instagram</h4>
+            <p>Just take a look at a few of his shots and try not to want this in your feed regularly.</p>
+          </div>
+          <ul class="card-tools">
+            <li class="tools-item">
+              <i class="fa fa-heart like"></i>
+              <span class="tools-count">543</span>
+            </li>
+            <li class="tools-item">
+              <i class="fa fa-share share"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="https://sun9-8.userapi.com/c7007/v7007967/436b8/Ab_EluGxJQk.jpg" alt="img"/>
+          <div class="info-center">Environmental Activist Stock Illustrations</div>
+        </div>
+        <div class="card">
+          <img src="https://i0.wp.com/biofriendlyplanet.com/wp-content/uploads/2015/08/corn-fields-e1439831043554.jpg?w=560&ssl=1" alt="img"/>
+          <div class="info-center">Can Biofuels Really Be a Sustainable Fuel Source?</div>
+        </div>
+        <div class="card">
+          <img src="https://images.livemint.com/img/2019/10/13/600x338/cac438db076b419aba27c1cfe072eb52-cac438db076b419aba27c1cfe072eb52-0_1570985113441_1570985151792.jpg" alt="img"/>
+          <div class="info-center">Greta Thunberg: TIME's Person of the Year 2019</div>
+        </div>
+        <div class="card-half wide">
+          <div class="card-img">
+            <img src="https://i.imgur.com/tAlyI9S.jpg" alt="img"/>
+          </div>
+          <div class="card-text">
+            <h4>Green Up Your Vehicle</h4>
+            <p>How to Approach Car Repair and Maintenance with a Conscience</p>
+          </div>
+          <ul class="card-tools">
+            <li class="tools-item">
+              <i class="fa fa-heart like"></i>
+              <span class="tools-count">133</span>
+            </li>
+            <li class="tools-item">
+              <i class="fa fa-share share"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="card-half">
+          <div class="card-img">
+            <img src="https://i2.wp.com/biofriendlyplanet.com/wp-content/uploads/2019/11/shopping-mall.jpg?zoom=2&resize=640%2C354&ssl=1" alt="img"/>
+          </div>
+          <div class="card-text">
+            <h4>5 Eco-Friendly Holiday Shopping Tips</h4>
+            <p>We wanted to share some eco-friendly holiday shopping tips to help make things a little more biofriendly.</p>
+          </div>
+          <ul class="card-tools">
+            <li class="tools-item">
+              <i class="fa fa-heart like"></i>
+              <span class="tools-count">4533</span>
+            </li>
+            <li class="tools-item">
+              <i class="fa fa-share share"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="https://sun9-61.userapi.com/c855436/v855436573/be7b5/R0Te8tH578M.jpg" alt="img"/>
+          <div class="info-center">Healthy Breakfasts: 31 Fast Recipes for Busy Mornings</div>
+        </div>
+        <div class="card">
+          <img src="https://i.gifer.com/Ira.gif" alt="img"/>
+          <div class="info-center">Wind Energy: 8 Ways to Collect It
+</div>
+        </div>
+        <div class="card">
+          <img src="https://grist.files.wordpress.com/2017/08/ocean-plastic.jpg?w=1024&h=576&crop=1" alt="img"/>
+          <div class="info-center">
+Pollution Facts & Types of Pollution</div>
+        </div>
+        <div class="card">
+          <img src="https://i1.wp.com/biofriendlyplanet.com/wp-content/uploads/2012/04/2558707414_e4aebd3efb_z-e1334967004955.jpg?w=560&ssl=1" alt="img"/>
+          <div class="info-center">Earth Day and Beyond: Pledge to do an Act of Green</div>
+        </div>
+        <div class="card-half">
+          <div class="card-img">
+            <span class="label">
+              <i class="fa fa-star"></i>                 </span>
+            <img src="https://40.media.tumblr.com/682b6eb0bcafb090c26cda164a235f3b/tumblr_n04czvggDF1sv6eyto1_500.jpg" alt="img"/>
+          </div>
+          <div class="card-text">
+            <h4>These 11 eco-friendly habits</h4>
+            <p>Each of us have habits we’ve developed over time, some that hinder us to the point we’d rather do without and others which aid in our survival.</p>
+          </div>
+          <ul class="card-tools">
+            <li class="tools-item">
+              <i class="fa fa-heart like"></i>
+              <span class="tools-count">8543</span>
+            </li>
+            <li class="tools-item">
+              <i class="fa fa-share share"></i>
+            </li>
+          </ul>
+        </div>
       </div>
-    </section>
-    <footer>Copyright 2019 || Eco- qozgalys</footer>
-  </body>
+    </main>
+  </div>
+</body>
 </html>
