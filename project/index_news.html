@@ -52,7 +52,7 @@
           </a>
         </li>
         <li class="sidebar-item">
-          <a href="index_admin.html">
+          <a href="table.php">
             <img src="C:\Users\админ\Desktop\books\web-programming\preproject\icons\admin.png" width="30" height="30"/>
           </a>
         </li>
@@ -71,23 +71,11 @@
             <h4>Plan Your Eco-Friendly Camping Trip: Seven Ways To Green Your Winter Holidays</h4>
             <p>Camping is one way of separating ourselves from the environment we live in. Getting away from the day-to-day stress of life can be extremely beneficial and a recreational activity like a camping trip with friends or family members might just be the way to go, even during the winter holidays. While camping is already a fun, recreational activity usually done in parks, forests or any nature-friendly environment, camping activities should also be environmentally-friendly.
 </br>
-Below are a few interesting ways to green your winter holidays by camping in an eco-friendly manner:
-</br>
-1. Planning
-In every activity, planning is one of the most crucial stages. It is in this phase where you determine or outline your activity. When planning a camping trip, the first thing to consider is the schedule and the location of the activity. It is also important to consider the distance of the camping site. When the desired camping site is quite far, it requires a mode of transportation such as cars or other vehicles. Therefore, it will usually require using a lot of gasoline and end up producing harmful emissions, which is harmful to the environment.
-</br>
-It is advised, as far as eco-friendly camping is concerned, to find a site within walking distance. If you have a large space in your backyard or in a garden, you may spend the activity there. Otherwise, you may consider spending it in a natural park near your residence.
-</br>
-Planning should also include everything you want to bring such as tents, foods, etc. The duration of the camping activity is another important thing to consider.
-</br>
-2. Use eco-friendly materials when camping
-Being an activity usually done in nature, it is also sound to use eco-friendly and sustainable materials when doing camping activities. One thing to consider is using recyclable and multi-use items instead of single-use items. For example, you can use waterproof tarps when making tents, as well as hammocks. If you have an unused tarp in your home, you can also use it to create your own trash containers. You can bring a solar oven, stainless steel cookware, vegan sleeping bag and recycled camping gear as well. The options for eco-friendly camping materials are limitless.
-</br>
-3. Pack out trash, compost and recycling
-Rubbish disposal is very important in camping since trash left out in nature will cause harm to the environment. Throwing garbage everywhere, or even just leaving food and other trash laying around, is strongly discouraged as it destroys the flora and fauna of the environment. It is important to note that when camping you should preserve the environment condition in a status quo. Hence, the garbage (trash, compost and recycling) needs to be disposed of correctly by leaving nothing in the camp site when you leave.
-</br>
-4. Take reusable items
-In considering items to be used in camping, the use of plastic is discouraged. Although plastics can be recyclable, it does not change the fact of it being harmful to the environment. Using an eco-friendly spoon, fork and plate is a good idea. There are some spoons and forks made of wood, which is very eco-friendly and it’s reusable. Using biodegradable plates. such as those are made with paper, is also encouraged. Plastic use while camping is bad for the environment, so nowadays its use is strongly discouraged.</p>
+Below are a few interesting ways to green your winter holidays by camping in an eco-friendly manner:</p>
+<div id="news"></div>
+<button id="plan" class="myBtn">Eco-Planning</button>
+<button id="material" class="myBtn">Eco-Materials</button>
+<button id="rubbish" class="myBtn">Eco-Recycle</button>
           </div>
           <ul class="card-tools">
             <li class="tools-item">
@@ -503,7 +491,50 @@ footer{
   text-align: center;
   bottom: 0;
 }
+.myBtn{
+  background-color: white;
+  color: black;
+  border: 2px solid #60C27E;
+  padding: 10px;
+  margin: 10px;
+}
+.myBtn:hover{
+  background-color: #60C27E;
+  color: white;
+}
 /*https://image.flaticon.com/icons/png/512/148/148836.png in case if we will need empty-heart*/
   </style>
+  <script>
+
+      	let myRequest = new Request("Task 1.json");
+      	fetch("Task 1.json")
+        	.then(function(resp) {
+          	return resp.json();
+  	     })
+  	      .then(function(data){
+  	      	document.getElementById('plan').addEventListener('click',function () {
+  	      	let r = document.getElementById('news');
+  	      	document.getElementById('news').innerHTML="";
+  	      	r.innerHTML+="<h2>Planning.<h2>";
+  	      	r.innerHTML+=data["plan"];
+  	      });
+
+  	      	document.getElementById('material').addEventListener('click',function () {
+  	      	let r = document.getElementById('news');
+  	      	document.getElementById('news').innerHTML="";
+  	      	r.innerHTML+="<h2>Materials.<h2>";
+  	      	r.innerHTML+=data["material"];
+  	      });
+
+
+  	      	document.getElementById('rubbish').addEventListener('click',function () {
+  	      	let r = document.getElementById('news');
+  	      	document.getElementById('news').innerHTML="";
+  	      	r.innerHTML+="<h2>Reduce.Recycle.Fund.<h2>";
+  	      	r.innerHTML+=data["rubbish"];
+  	      });
+
+  		});
+  </script>
 </body>
 </html>
